@@ -39,5 +39,24 @@ public class JumpGame {
 		}
 
 	}
+	
+	public static boolean canJump2(int[] nums) {
+		int length = nums.length;
+		if (length == 1) {
+			return true;
+		}
+		int lastGoodIndex = length -1;
+		
+		for(int i = length -1 ; i >= 0 ; i--) {
+			
+			if(nums[i] + i >= lastGoodIndex) {
+				lastGoodIndex = i;
+			}
+			
+		}
+		
+		return lastGoodIndex == 0;
+
+	}
 
 }
