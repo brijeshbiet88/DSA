@@ -9,6 +9,13 @@ public class TargetSumPlusMinus {
 		findTargetSumWays(nums, target);
 
 		System.out.println("Count = " + count);
+		
+		System.out.println(" ===========Check If Target Exists ---------------");
+		
+		int[] nums2 = { 1, 4, 7, 5, -1 };
+		int target2 = 2;
+		System.out.println(" Does Target Exists ? "+checkIfExist(nums2, 0, 0, target2));
+		
 	}
 
 	static int count = 0;
@@ -27,6 +34,15 @@ public class TargetSumPlusMinus {
 			calculate(nums, i + 1, sum + nums[i], S);
 			calculate(nums, i + 1, sum - nums[i], S);
 		}
+	}
+	
+	public static boolean checkIfExist(int[] nums, int i, int sum, int S) {
+		if (i == nums.length) {
+			if (sum == S)
+				return true;
+		}if(i > nums.length) return false;	
+		return checkIfExist(nums, i + 1, sum + nums[i], S) || checkIfExist(nums, i + 1, sum - nums[i], S);
+	
 	}
 
 }
