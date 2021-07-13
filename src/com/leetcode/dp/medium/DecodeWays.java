@@ -1,11 +1,13 @@
 package com.leetcode.dp.medium;
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class DecodeWays {
 
 	public static void main(String[] args) {
 		System.out.println();
-		String s = "212121";
+		String s = "123";
 		System.out.println(" No of Decoding Ways = " + numDecodings(s));
 		System.out.println();
 		
@@ -22,6 +24,11 @@ public class DecodeWays {
 		System.out.println();
 		s = "101";
 		System.out.println(" No of Decoding Ways = " + numDecodings(s));
+		System.out.println();
+		
+		System.out.println();
+		s = "2021";
+		System.out.println(" No of Decoding Ways = " + numDecodings2(s));
 		System.out.println();
 	}
 
@@ -44,6 +51,32 @@ public class DecodeWays {
 		}
 		
 		return dp[s.length()];
+	}
+	
+	public static int numDecodings2(String s) {
+		return decodeWaysHelper(s , 0); 
+	}
+
+	static Map <Integer , Integer> map = new HashMap();
+	private static int decodeWaysHelper(String s, int i) {
+
+		
+		if (i >= s.length())
+			return 1;
+
+		if (s.charAt(i) == '0')
+			return 0;
+		
+		if(map.containsKey(i))
+			return map.get(i);
+
+		int ways = decodeWaysHelper(s, i + 1);
+			if (i + 2 <= s.length() && Integer.parseInt(s.substring(i, i + 2)) <= 26) {
+				ways += decodeWaysHelper(s, i + 2);
+			}
+
+		map.put(i, ways);	
+		return ways;
 	}
 
 }
