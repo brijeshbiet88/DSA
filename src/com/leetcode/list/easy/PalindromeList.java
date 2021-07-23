@@ -11,7 +11,7 @@ public class PalindromeList {
 		ListNode head = ListUtil.getEvenPalindromeList();
 		System.out.println("Print List ");
 		ListUtil.printList(head);
-		System.out.println("Is Palindrome "+head );
+		System.out.println("Is Palindrome "+isPalindrome(head) );
 
 	}
 
@@ -21,14 +21,21 @@ public class PalindromeList {
 		Stack<Integer> s = new Stack<Integer>();
 
 		ListNode tmp = head;
-		while (tmp != null) {
+		ListNode two = head;
+		while (two != null) {
 
-			s.push(tmp.val);
-			tmp = tmp.next;
+			two = two.next;
+			if(two != null) {
+				two = two.next;
+				s.push(tmp.val);
+				tmp = tmp.next;
+				
+			}else {
+				tmp = tmp.next;
+			}
 
 		}
-		tmp = head;
-
+		
 		while (!s.isEmpty()) {
 			int val = s.pop();
 			if (val != tmp.val)
