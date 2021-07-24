@@ -37,6 +37,9 @@ public class AddTwoNumbers {
 		}
 		
 		while(l1 != null) {
+			if(carry == 0) {
+				tail.next = l1;
+			}
 			currentSum = carry + l1.val;
 			carry = currentSum /10;
 			currentSum = currentSum % 10;
@@ -47,6 +50,9 @@ public class AddTwoNumbers {
 		}
 		
 		while(l2 != null) {
+			if(carry == 0) {
+				tail.next = l2;
+			}
 			currentSum = carry + l2.val;
 			carry = currentSum /10;
 			currentSum = currentSum % 10;
