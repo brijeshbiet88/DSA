@@ -3,9 +3,10 @@ package com.leetcode.list.medium;
 import com.leetcode.list.ListNode;
 import com.leetcode.list.ListUtil;
 
-public class RemoveDuplicatedSortedList {
+public class RemoveDuplicatedSortedList2 {
 
 	public static void main(String[] args) {
+
 		ListNode head = new ListNode(1);
 
 		ListNode node2 = new ListNode(1);
@@ -31,27 +32,26 @@ public class RemoveDuplicatedSortedList {
 		System.out.println("Print List After Deleting Duplicate ");
 		ListUtil.printList(head);
 
+	
 	}
 
-	public static ListNode deleteDuplicates(ListNode head) {
-		if(head == null) return head;
-		ListNode tmp1 = head;
-		ListNode tmp2 = null;
-		
-		while(tmp1.next != null) {
-			
-			tmp2 = tmp1.next;
-			while(tmp2 != null && tmp1.val == tmp2.val) {
-				tmp2 = tmp2.next;
+	private static ListNode deleteDuplicates(ListNode head) {
+		ListNode dummy = new ListNode(0, head);
+
+		ListNode tail = dummy;
+
+		while (head != null) {
+			if (head.next != null && head.val == head.next.val) {
+				while (head.next != null && head.val == head.next.val) {
+					head = head.next;
+				}
+				tail.next = head.next;
+			} else {
+				tail = tail.next;
 			}
-			
-			tmp1.next = tmp2;
-			tmp1 = tmp1.next;
-			if(tmp1 == null) break;
-		}
-		
-		return head;
-		
 
-	}
+			head = head.next;
+		}
+		return dummy.next;}
+
 }
