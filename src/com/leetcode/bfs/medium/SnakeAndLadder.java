@@ -47,7 +47,7 @@ public class SnakeAndLadder {
 
     public static int [] findCoordinates(int num , int n){
 
-        int r = n - (num -1) / n -1;
+        int r = n - 1 -(num -1) / n ;
         int c = (num-1) % n;
 
 
