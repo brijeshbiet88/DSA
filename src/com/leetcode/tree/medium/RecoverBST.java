@@ -35,6 +35,9 @@ public class RecoverBST {
 	}
 
 	public static void inorder(TreeNode root) {
+		if(first != null && second != null){
+			return;
+		}
 		if (root == null) {
 			return;
 		}
