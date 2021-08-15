@@ -56,7 +56,7 @@ public class SnakeAndLadder {
 
         if(r%2 == n %2){
             pos[0] = r;
-            pos[1] = n -1 -c;
+            pos[1] = n -1 -c; // Because of zigzag motion on board
         }else{
             pos[0] = r;
             pos[1] = c;
