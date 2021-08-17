@@ -7,6 +7,18 @@ public class MinLimitsOfBallsInBag {
         int maxOpeartion = 2;
         System.out.println("Minimum Penalty = "+minimumSize(nums , maxOpeartion));
         System.out.println();
+
+        System.out.println("------------------Test Case 2-------------------");
+        int [] nums2 = {2,4,8,2};
+        maxOpeartion = 4;
+        System.out.println("Minimum Penalty = "+minimumSize(nums2 , maxOpeartion));
+        System.out.println();
+
+        System.out.println("------------------Test Case 2-------------------");
+        int [] nums3 = {7,17};
+        maxOpeartion = 2;
+        System.out.println("Minimum Penalty = "+minimumSize(nums3 , maxOpeartion));
+        System.out.println();
     }
 
     public static int minimumSize(int[] nums, int maxOperations) {
