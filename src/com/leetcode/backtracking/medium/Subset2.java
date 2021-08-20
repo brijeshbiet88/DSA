@@ -11,6 +11,12 @@ public class Subset2 {
         printResult(subsets);
         System.out.println();
 
+        System.out.println("----------------Test Case 2-----------------------");
+        int [] nums2 = {1 , 1};
+        List<List<Integer>> subsets2 = subsetsWithDup2(nums2);
+        printResult(subsets2);
+        System.out.println();
+
     }
 
     private static void printResult(List<List<Integer>> subsets) {
@@ -34,6 +40,27 @@ public class Subset2 {
             List<Integer> newSubset = new ArrayList<>(list);
             newSubset.add(nums[i]);
             subsets(nums, i+1, newSubset, result);
+        }
+
+    }
+
+    public static List<List<Integer>> subsetsWithDup2(int[] nums) {
+        List<List<Integer>> result = new ArrayList();
+        Arrays.sort(nums);
+        subsets2(nums , 0 , new ArrayList() , result);
+        return new ArrayList<>(result);
+    }
+
+    private static void subsets2(int[] nums, int start, List list, List<List<Integer>> result) {
+        if(start > nums.length) return;
+        result.add(list);
+
+        for (int i = start ; i < nums.length ; i++){
+            if(i > start && nums[i] == nums[i-1])
+                continue;
+            List<Integer> newSubset = new ArrayList<>(list);
+            newSubset.add(nums[i]);
+            subsets2(nums, i+1, newSubset, result);
         }
 
     }
