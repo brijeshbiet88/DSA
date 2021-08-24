@@ -17,6 +17,12 @@ public class NextGreaterElement3 {
         System.out.println("Next Greater Element of "+n+" = "+nextGreaterElement(n));
         System.out.println();
 
+        System.out.println("---------------Test Case 4-------------------");
+        n = 2343210;
+        System.out.println("Next Greater Element of "+n+" = "+nextGreaterElement(n));
+        System.out.println();
+
+
     }
 
     public static int nextGreaterElement(int n) {
