@@ -21,19 +21,19 @@ public class NextGreaterElement3 {
 
     public static int nextGreaterElement(int n) {
         char[] ch = String.valueOf(n).toCharArray();
-        int index = ch.length - 2;
-        while (index >= 0 && ch[index] >= ch[index + 1])
-        index--;
+        int i = ch.length - 2;
+        while (i >= 0 && ch[i] >= ch[i + 1])
+        i--;
 
-        if (index == -1)
+        if (i == -1)
             return -1;
 
         int j = ch.length - 1;
-        while (j >= index && ch[j] <= ch[index])
+        while (j >= i && ch[j] <= ch[i])
             j--;
 
-        swap(ch, index, j);
-        reverse(ch, index + 1);
+        swap(ch, i, j);
+        reverse(ch, i + 1);
 
         try {
             return Integer.parseInt(new String(ch));
