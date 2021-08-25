@@ -36,7 +36,6 @@ public class BTPreOrder {
             curr = s.pop();
             curr = curr.right;
 
-
         }
         return result;
     }
