@@ -19,6 +19,14 @@ public class DailyTemperature {
         for(int days : result2)
             System.out.print(days+" ");
         System.out.println();
+
+        System.out.println("-------------------Test Case 3---------------------");
+        int [] temperatures3 = {30,29,28,27,26,35};
+        int [] result3 = dailyTemperatures(temperatures3);
+        System.out.println("Print Result ");
+        for(int days : result3)
+            System.out.print(days+" ");
+        System.out.println();
         
     }
 
