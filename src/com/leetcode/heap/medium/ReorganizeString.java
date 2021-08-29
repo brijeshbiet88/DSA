@@ -17,6 +17,16 @@ public class ReorganizeString {
         s = "aaab";
         System.out.println("Original String "+ s +" Reorganized String = "+reorganizeString(s));
         System.out.println();
+
+        System.out.println("-----------------Test Case 3-----------------");
+        s = "aaabbb";
+        System.out.println("Original String "+ s +" Reorganized String = "+reorganizeString(s));
+        System.out.println();
+
+        System.out.println("-----------------Test Case 4-----------------");
+        s = "aaabbcbb";
+        System.out.println("Original String "+ s +" Reorganized String = "+reorganizeString(s));
+        System.out.println();
     }
 
     public static String reorganizeString(String s) {
