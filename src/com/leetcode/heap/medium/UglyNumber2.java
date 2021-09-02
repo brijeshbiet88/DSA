@@ -1,4 +1,4 @@
-package com.leetcode.bfs.medium;
+package com.leetcode.heap.medium;
 
 import java.util.ArrayList;
 import java.util.Map;
