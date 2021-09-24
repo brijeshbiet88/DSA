@@ -7,6 +7,12 @@ public class MinDeletionCost {
         int [] cost = {1,2,3,4,5};
         System.out.println("Result = "+minCost(s,cost));
         System.out.println();
+
+        System.out.println("-------------------Test Case 2---------------------");
+        s = "aabaa";
+        int [] cost2 = {1,2,3,4,1};
+        System.out.println("Result = "+minCost(s,cost2));
+        System.out.println();
     }
 
     public static int minCost(String s, int[] cost) {
