@@ -9,9 +9,15 @@ public class MinDeletionCost {
         System.out.println();
 
         System.out.println("-------------------Test Case 2---------------------");
-        s = "aabaa";
-        int [] cost2 = {1,2,3,4,1};
+        s = "aaabaaaa";
+        int [] cost2 = {1,2,3,4,2 , 1 , 4 , 5};
         System.out.println("Result = "+minCost(s,cost2));
+        System.out.println();
+
+        System.out.println("-------------------Test Case 3---------------------");
+        s = "abaaaa";
+        int [] cost3 = {1,2,3,4,3 ,1};
+        System.out.println("Result = "+minCost(s,cost3));
         System.out.println();
     }
 
@@ -27,7 +33,7 @@ public class MinDeletionCost {
             groupMax = Math.max(groupMax, cost[i]);
         }
 
-        result += groupSum - groupMax;
+        result += groupSum - groupMax; // Corner Case
         return result;
     }
 }
