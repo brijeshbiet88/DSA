@@ -44,7 +44,6 @@ public class GroupAnagrams {
             }
 
         }
-
         map.forEach((k,v)->{
             result.add(v);
         });
