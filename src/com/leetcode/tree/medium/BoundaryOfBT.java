@@ -50,8 +50,6 @@ public class BoundaryOfBT {
             return;
 
         if (node.right != null) {
-            // to ensure bottom up order, first call for right
-            // subtree, then print this node
             printBoundaryRight(node.right);
             System.out.print(node.val + " ");
         }
