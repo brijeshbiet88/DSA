@@ -18,32 +18,27 @@ public class JumpGame2 {
 	}
 
 	public static int jump(int[] nums) {
+		if(nums.length == 1) return 0;
 
-		int n = nums.length;
-		
-		int jumps = 1;
-		
-		if(n ==1 || nums[0] == 0) {
-			return 0;
-		}
-		
-		int farthest = nums[0];
-		int current = nums[0];
-		
-		for (int i = 1; i < n; i++) {
-			if (i == n - 1)
-				return jumps;
 
-			farthest = Math.max(farthest, i + nums[i]);
-			if (i == current) {
+		int jumps = 0;
+		int maxReach = 0;
+		int currentReach = 0;
+		int i = 0;
+
+		while(i < nums.length - 1){
+
+			maxReach = Math.max(maxReach , i + nums[i]);
+
+			if(i == currentReach){
 				jumps++;
-				current = farthest;
+				currentReach = maxReach;
 			}
+			i++;
 
 		}
-		
-		
-		return jumps;
 
+		return jumps;
 	}
-}
+	}
+
