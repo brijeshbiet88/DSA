@@ -9,6 +9,12 @@ public class TaskSchedular {
         int n = 2;
         System.out.println("result = "+leastInterval(tasks , n));
         System.out.println();
+
+        System.out.println("-----------------Test Case 2------------------");
+        char [] tasks2 = {'A','A','A','A','A','B','B','B','B','B','C','C','C','C','D','D','D'};
+        n = 2;
+        System.out.println("result = "+leastInterval(tasks2 , n));
+        System.out.println();
     }
 
     public static int leastInterval(char[] tasks, int n) {
