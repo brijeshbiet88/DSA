@@ -4,7 +4,7 @@ public class BestTimeBuySellStock2Transcation {
     public static void main(String[] args) {
         System.out.println("---------------Test Case 1----------------");
         int [] prices = {3,3,5,0,0,3,1,4};
-        System.out.println("Max Profit With At Most Two Transactions = "+maxProfit(prices));
+        System.out.println("Max Profit With At Most 2 Transactions = "+maxProfit(prices));
         System.out.println();
     }
     public static int maxProfit(int[] prices) {
