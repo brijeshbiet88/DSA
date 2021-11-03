@@ -29,6 +29,5 @@ public class SumRootToLeafNumbers {
         }
         sumNumbersHelper(root.left , sum);
         sumNumbersHelper(root.right , sum);
-
     }
 }
