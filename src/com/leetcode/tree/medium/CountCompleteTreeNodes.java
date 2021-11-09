@@ -11,20 +11,35 @@ public class CountCompleteTreeNodes {
     }
 
     public static int countNodes(TreeNode root) {
-        if(root == null) return 0;
-        int height = 1;
-        TreeNode left = root.left , right = root.right;
-        while(left != null && right != null){
-            left = left.left;
-            right = right.right;
-            height++;
-        }
 
-        if(left == null && right == null){
-            return (int) Math.pow(2, height) - 1;
+        if(root == null) return 0;
+
+        int left = getLeftHeight(root);
+        int right = getRightHeight(root);
+
+        if(left == right){
+            return (int) Math.pow(2, left) - 1;
         }else{
             return 1 + countNodes(root.left) + countNodes(root.right);
         }
+    }
+
+    public static int getLeftHeight(TreeNode root){
+        int count = 1;
+        while(root.left != null){
+            count++;
+            root = root.left;
+        }
+        return count ;
+    }
+
+    public static int getRightHeight(TreeNode root){
+        int count = 1;
+        while(root.right != null){
+            count++;
+            root = root.right;
+        }
+        return count ;
     }
 
 }
