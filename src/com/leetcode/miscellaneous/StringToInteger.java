@@ -39,7 +39,7 @@ public class StringToInteger {
         System.out.println();
     }
 
-    public static int myAtoi(String str) {
+    public static int myAtoi(String s) {
         s = s.trim();
         int index = 0, sign = 1, total = 0, n = s.length();
 
