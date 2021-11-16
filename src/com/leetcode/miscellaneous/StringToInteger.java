@@ -40,17 +40,17 @@ public class StringToInteger {
     }
 
     public static int myAtoi(String str) {
-        int index = 0, sign = 1, total = 0, n = str.length();
-        while (index < n && str.charAt(index) == ' ')
-            index++;
+        s = s.trim();
+        int index = 0, sign = 1, total = 0, n = s.length();
 
-        if (index < n && (str.charAt(index) == '+' || str.charAt(index) == '-')) {
-            sign = str.charAt(index++) == '+' ? 1 : -1;
+
+        if (index < n && (s.charAt(index) == '+' || s.charAt(index) == '-')) {
+            sign = s.charAt(index++) == '+' ? 1 : -1;
         }
 
         //3. Convert number and avoid overflow
         while (index < n) {
-            int digit = str.charAt(index) - '0';
+            int digit = s.charAt(index) - '0';
             if (digit < 0 || digit > 9) break;
 
             //check if total will be overflow after 10 times and add digit
@@ -61,6 +61,6 @@ public class StringToInteger {
             index++;
         }
 
-        return total * sign;
+        return sign * total;
     }
 }
