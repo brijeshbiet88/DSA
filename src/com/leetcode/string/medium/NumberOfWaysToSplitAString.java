@@ -41,7 +41,7 @@ public class NumberOfWaysToSplitAString {
         for (char c : s.toCharArray()) {
             ones += c - '0';
             if (ones == oneThird) ways1++;
-            if (ones == 2 * oneThird) ways2++;
+            if (ones == oneThird * 2) ways2++;
         }
         return (int) ((ways1 * ways2) % MOD);
     }
