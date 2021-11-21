@@ -34,13 +34,16 @@ public class SwapForLongestRepeatedCharSubstr {
         char[] ch = s.toCharArray();
         for(int i = 0; i < ch.length; i++)
             frequency[ch[i]-'a']++;
+
         int max = 0;
+
         for(int i = 0; i < ch.length; i++){
             char curr = ch[i];
             int j = i, count = 0, diff = 0;
             while(j < ch.length && (curr == ch[j] || diff == 0) && count < frequency[curr-'a']){
                 if(curr != ch[j])
                     diff++;
+
                     count++;
                     j++;
             }
@@ -52,6 +55,7 @@ public class SwapForLongestRepeatedCharSubstr {
             while(j >= 0 && (curr == ch[j] || diff == 0) && count < frequency[curr-'a']){
                 if(curr != ch[j])
                     diff++;
+
                     count++;
                     j--;
             }
