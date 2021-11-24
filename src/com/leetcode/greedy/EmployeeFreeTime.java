@@ -63,7 +63,7 @@ public class EmployeeFreeTime {
 
         intervals.sort(Comparator.comparingInt(interval -> interval.start));
 
-       / List<Interval> result = new ArrayList<>();
+        List<Interval> result = new ArrayList<>();
         for (Interval intrvl : intervals) {
             if (result.size() == 0)
                 result.add(intrvl);
