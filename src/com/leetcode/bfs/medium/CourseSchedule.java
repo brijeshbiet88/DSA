@@ -18,6 +18,12 @@ public class CourseSchedule {
         numCourses = 2;
         System.out.println("Can Finish ? "+canFinish(numCourses , pre2));
         System.out.println();
+
+        System.out.println("------------------Test Case 3-------------------");
+        int [][] pre3 = {{0,1},{1,2},{2,1}};
+        numCourses = 3;
+        System.out.println("Can Finish ? "+canFinish(numCourses , pre3));
+        System.out.println();
     }
 
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
@@ -27,24 +33,24 @@ public class CourseSchedule {
             graph[i] = new ArrayList();
         }
 
-        int[] inDegree = new int[numCourses];
+        int[] outDegree = new int[numCourses];
         
         for(int[] edge: prerequisites) {
-            graph[edge[0]].add(edge[1]);
-            inDegree[edge[1]]++;
+            graph[edge[1]].add(edge[0]);
+            outDegree[edge[0]]++;
         }
 
         Queue<Integer> queue = new LinkedList();
         for(int i = 0; i < numCourses; i++) {
-            if(inDegree[i] == 0)
+            if(outDegree[i] == 0)
                 queue.add(i);
         }
 
         while(!queue.isEmpty()) {
             int curr = queue.poll();
             for(int c : graph[curr]) {
-                inDegree[c]--;
-                if(inDegree[c] == 0)
+                outDegree[c]--;
+                if(outDegree[c] == 0)
                     queue.add(c);
             }
             numCourses--;
