@@ -18,6 +18,11 @@ public class NonOverlappingIntervals {
         int [][] intervals3 = {{1,2},{2,3}};
         System.out.println("Result = "+eraseOverlapIntervals(intervals3));
         System.out.println();
+
+        System.out.println("-----------------Test Case 4---------------------");
+        int [][] intervals4 = {{1,3},{1,2},{1,4},{3,4},{2,4}};
+        System.out.println("Result = "+eraseOverlapIntervals(intervals4));
+        System.out.println();
     }
 
     public static int eraseOverlapIntervals(int[][] intervals) {
