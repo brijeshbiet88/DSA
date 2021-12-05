@@ -10,7 +10,6 @@ public class Computer {
     private boolean isGraphicsCardEnabled;
     private boolean isBluetoothEnabled;
 
-
     public String getHDD() {
         return HDD;
     }
