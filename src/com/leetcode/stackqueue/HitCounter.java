@@ -14,6 +14,7 @@ public class HitCounter {
         hitCounter.hit(5);
 
         System.out.println("Hits in Last 5 seconds At t = 5 "+hitCounter.getHits(5));
+        System.out.println("Hits in Last 5 seconds At t = 5 "+hitCounter.getHits(5));
         hitCounter.hit(6);
         hitCounter.hit(8);
 
