@@ -74,6 +74,5 @@ public class MinHeightTrees {
 
         }
         return new ArrayList<>(leaves);
-
     }
 }
