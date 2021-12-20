@@ -37,7 +37,6 @@ public class MinimumAbsoluteDiff {
                 result.add(pair);
             }
         }
-
         return result;
     }
 }
