@@ -14,6 +14,14 @@ public class SlidingWindowMaximum {
         for (int num : result)
             System.out.print(num+" ");
         System.out.println();
+
+        System.out.println("--------------Test Case 2-------------------");
+        int [] nums2 = {4,2,5,-3,8,3,9,7};
+
+        int [] result2 = maxSlidingWindow(nums2 , k);
+        for (int num : result2)
+            System.out.print(num+" ");
+        System.out.println();
     }
 
     public static int[] maxSlidingWindow(int[] nums, int k) {
