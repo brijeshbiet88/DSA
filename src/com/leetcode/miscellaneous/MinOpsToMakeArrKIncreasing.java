@@ -32,23 +32,32 @@ public class MinOpsToMakeArrKIncreasing {
     }
 
     private int lengthOfLIS(List<Integer> nums){
-        int size = nums.size();
-        int lis[] = new int[nums.size()];
-        int i, j, max = 0;
+        List<Integer> nonDecreasingList = new ArrayList<>();
+        nonDecreasingList.add(nums.get(0));
 
-        for (i = 0; i < size; i++)
-            lis[i] = 1;
-
-        for (i = 1; i < size; i++)
-            for (j = 0; j < i; j++)
-                if (nums.get(i) >= nums.get(j))
-                    lis[i] = Math.max(lis[i] , lis[j] + 1);
-
-        for (i = 0; i < size; i++)
-            if (max < lis[i])
-                max = lis[i];
-
-        return max;
+        for(int i = 1; i < nums.size(); i++){
+            int lastItem = nonDecreasingList.get(nonDecreasingList.size() - 1);
+            if(nums.get(i) >= lastItem){
+                nonDecreasingList.add(nums.get(i));
+            } else {
+                int index = nextGreaterIndex(nonDecreasingList, nums.get(i));
+                nonDecreasingList.set(index, nums.get(i));
+            }
+        }
+        return nonDecreasingList.size();
     }
 
+    private int nextGreaterIndex(List<Integer> list, int num){
+        int low = 0;
+        int high = list.size() - 1;
+
+        while(low < high) {
+            int mid = low + (high - low) / 2;
+            if(num >= list.get(mid))
+                low = mid + 1;
+            else
+                high = mid;
+        }
+        return low;
+    }
 }
