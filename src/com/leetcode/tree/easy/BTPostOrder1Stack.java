@@ -29,8 +29,6 @@ public class BTPostOrder1Stack {
             }else {
                TreeNode temp = stack.peek().right;
                if(temp == null){
-                   temp = stack.pop();
-                   result.add(temp.val);
                    while (!stack.isEmpty() && stack.peek().right == temp){
                        temp = stack.pop();
                        result.add(temp.val);
