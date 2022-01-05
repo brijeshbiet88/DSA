@@ -93,9 +93,8 @@ public class PowerSet {
 				newSubsets.add(newList);
 				
 			}
-			for (List<Integer> curr : newSubsets) {
-				output.add(curr);
-			}
+				output.addAll(newSubsets);
+
 		}
 		return output;
 	}
