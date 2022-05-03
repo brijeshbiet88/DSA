@@ -19,38 +19,38 @@ public class SortedUnsortedContArray {
 
     public static int findUnsortedSubarray(int[] nums) {
 
-        Stack<Integer> st = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         int left = nums.length - 1;
 
         for (int i = 0; i < nums.length; ) {
-            if (st.empty()) {
-                st.push(i);
+            if (stack.empty()) {
+                stack.push(i);
                 i++;
             } else {
-                if (nums[st.peek()] > nums[i]) {
-                    left = Math.min(left, st.peek());
-                    st.pop();
+                if (nums[stack.peek()] > nums[i]) {
+                    left = Math.min(left, stack.peek());
+                    stack.pop();
                 } else {
-                    st.push(i);
+                    stack.push(i);
                     i++;
                 }
             }
         }
 
-        st.clear();
+        stack.clear();
         int right = 0;
 
 
         for (int i = nums.length - 1; i >= 0; ) {
-            if (st.empty()) {
-                st.push(i);
+            if (stack.empty()) {
+                stack.push(i);
                 i--;
             } else {
-                if (nums[st.peek()] < nums[i]) {
-                    right = Math.max(right, st.peek());
-                    st.pop();
+                if (nums[stack.peek()] < nums[i]) {
+                    right = Math.max(right, stack.peek());
+                    stack.pop();
                 } else {
-                    st.push(i);
+                    stack.push(i);
                     i--;
                 }
             }
